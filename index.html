@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Home</title>
+  <meta name="description" content="A minimal, responsive personal portfolio homepage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #1f2937;
+      --chip: #0b1220;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.6) 100%); border-bottom: 1px solid var(--border); }
+    .container { max-width: 1024px; margin: 0 auto; padding: 1.25rem; }
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; letter-spacing: 0.5px; }
+    .nav a { margin-left: 1rem; padding: 0.5rem 0.75rem; border-radius: 999px; display: inline-block; }
+    .nav a[aria-current="page"] { background: var(--chip); border: 1px solid var(--border); }
+    main { padding: 2rem 0 3rem; }
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+    .title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; margin: 0 0 0.75rem; }
+    .subtitle { color: var(--muted); margin: 0 0 1.25rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1.25rem; padding: 1.25rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding: .35rem .6rem; border-radius: 999px; font-size: .85rem; }
+    footer { border-top: 1px solid var(--border); padding: 1.25rem 0 3rem; color: var(--muted); }
+    .cta { display: inline-block; padding: 0.75rem 1rem; background: var(--accent); color: #0b1220; font-weight: 700; border-radius: 0.9rem; box-shadow: 0 10px 20px rgba(96,165,250,.3); }
+    .cta:hover { filter: brightness(1.05); text-decoration: none; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Your Name</div>
+      <nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 class="title">Hi, I build clean, fast web experiences.</h1>
+        <p class="subtitle">Frontend engineer & designer focused on performance, accessibility, and delightful UX.</p>
+        <div class="chips" aria-label="Key skills">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">Node</span>
+        </div>
+        <p style="margin-top: 1.25rem;">
+          <a class="cta" href="projects.html" title="See my recent work">See my work →</a>
+        </p>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0;">About me</h2>
+        <p>I’m a developer who cares about details—semantic HTML, crisp typography, and snappy interactions. I enjoy solving complex problems with simple, elegant interfaces.</p>
+        <p>Currently open to frontend-heavy roles and freelance projects.</p>
+      </div>
+    </section>
+
+    <section style="margin-top: 2rem;">
+      <h2>Highlights</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 style="margin-top:0;">Performance Wins</h3>
+          <p>Cut Largest Contentful Paint by 42% via code-splitting and image optimization.</p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0;">Design Systems</h3>
+          <p>Built a modular component library adopted across 3 teams.</p>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0;">Accessibility</h3>
+          <p>Shipped WCAG AA features with keyboard-first navigation and ARIA patterns.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="year"></span> Your Name. All rights reserved. · <a href="projects.html">Projects</a></small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

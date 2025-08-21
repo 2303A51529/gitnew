@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Projects</title>
+  <meta name="description" content="Selected projects with brief descriptions and links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #1f2937;
+      --chip: #0b1220;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.6) 100%); border-bottom: 1px solid var(--border); }
+    .container { max-width: 1024px; margin: 0 auto; padding: 1.25rem; }
+    .nav { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; letter-spacing: 0.5px; }
+    .nav a { margin-left: 1rem; padding: 0.5rem 0.75rem; border-radius: 999px; display: inline-block; }
+    .nav a[aria-current="page"] { background: var(--chip); border: 1px solid var(--border); }
+    main { padding: 2rem 0 3rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1.25rem; padding: 1.25rem; display: flex; flex-direction: column; }
+    .card h3 { margin: 0 0 .25rem; }
+    .card p { margin: 0 0 0.75rem; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; }
+    .tag { background: var(--chip); border: 1px solid var(--border); padding: .35rem .6rem; border-radius: 999px; font-size: .85rem; }
+    footer { border-top: 1px solid var(--border); padding: 1.25rem 0 3rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Your Name</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="font-size: clamp(1.6rem,3vw,2.25rem); margin-top: 0;">Selected Projects</h1>
+    <p style="color: var(--muted); margin-top: -0.25rem;">A few things I’ve built recently.</p>
+
+    <section class="grid" aria-label="Projects list">
+      <article class="card">
+        <h3>Website Redesign</h3>
+        <p>Responsive redesign for a SaaS landing page that increased conversions by 18%.</p>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">A11y</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Dashboard App</h3>
+        <p>SPA with charts and auth. Implemented lazy loading and route-based code splitting.</p>
+        <div class="tags">
+          <span class="tag">React</span><span class="tag">Vite</span><span class="tag">JWT</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Image Optimizer</h3>
+        <p>CLI tool that compresses and resizes images; integrated into CI for automatic runs.</p>
+        <div class="tags">
+          <span class="tag">Node</span><span class="tag">Sharp</span><span class="tag">CI/CD</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Component Library</h3>
+        <p>Reusable, themeable UI components with tokens and docs site.</p>
+        <div class="tags">
+          <span class="tag">Design System</span><span class="tag">Storybook</span><span class="tag">TS</span>
+        </div>
+      </article>
+    </section>
+
+    <p style="margin-top: 1.5rem;">
+      <a href="index.html">← Back to Home</a>
+    </p>
+  </main>
+
+  <footer class="container">
+    <small>© <span id="year"></span> Your Name. Built with semantic HTML.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
